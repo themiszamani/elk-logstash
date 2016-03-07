@@ -29,7 +29,7 @@ RUN gpg --keyserver pool.sks-keyservers.net --recv-keys B42F6819007F00F88E364FD4
 RUN pip -q install supervisor
 
 # Config files
-COPY ./config/rsyncd.conf ./rsyncd.secrets /etc/
+COPY ./config/rsyncd.conf ./config/rsyncd.secrets /etc/
 COPY ./config/supervisord.conf /etc/supervisord.conf
 COPY ./config/iptables /etc/sysconfig/iptables
 COPY ./config/cron /var/spool/cron/logstash

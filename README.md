@@ -1,4 +1,4 @@
-ELK testing stack
+ELK testing stack - Logstash Dev
 =================
 
 [![](https://badge.imagelayers.io/bbania/elk-logstash:devel.svg)](https://imagelayers.io/?images=bbania/elk-logstash:devel 'Get your own badge on imagelayers.io')

@@ -29,15 +29,15 @@ RUN gpg --keyserver pool.sks-keyservers.net --recv-keys B42F6819007F00F88E364FD4
 RUN pip -q install supervisor
 
 # Config files
-COPY ./rsyncd.conf ./rsyncd.secrets /etc/
-COPY ./supervisord.conf /etc/supervisord.conf
-COPY ./iptables /etc/sysconfig/iptables
-COPY ./cron /var/spool/cron/logstash
-COPY ./init.sh /
-COPY ./entrypoint.sh /
-COPY ./patterns /etc/logstash/patterns
-COPY ./GeoLiteCity.dat ./GeoLiteCountry.dat /etc/logstash/
-COPY ./conf.d /etc/logstash/conf.d
+COPY ./config/rsyncd.conf ./config/rsyncd.secrets /etc/
+COPY ./config/supervisord.conf /etc/supervisord.conf
+COPY ./config/iptables /etc/sysconfig/iptables
+COPY ./config/cron /var/spool/cron/logstash
+COPY ./config/init.sh /
+COPY ./config/entrypoint.sh /
+COPY ./config/patterns /etc/logstash/patterns
+COPY ./config/GeoLiteCity.dat ./config/GeoLiteCountry.dat /etc/logstash/
+COPY ./config/conf.d /etc/logstash/conf.d
 
 RUN mkdir /root/certs
 RUN chmod 600 /etc/rsyncd.secrets

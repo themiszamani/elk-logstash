@@ -36,7 +36,7 @@ COPY ./config/cron /var/spool/cron/logstash
 COPY ./config/init.sh /
 COPY ./config/entrypoint.sh /
 COPY ./config/patterns /etc/logstash/patterns
-COPY ./config/GeoLiteCity.dat ./GeoLiteCountry.dat /etc/logstash/
+COPY ./config/GeoLiteCity.dat ./config/GeoLiteCountry.dat /etc/logstash/
 COPY ./config/conf.d /etc/logstash/conf.d
 
 RUN mkdir /root/certs

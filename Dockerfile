@@ -5,8 +5,8 @@ MAINTAINER "Bart Bania" <contact@bartbania.com>
 ENV LS_HEAP_SIZE=2g
 ENV LANG en_US.utf8
 
-RUN yum install -q -y iptables-services git GeoIP-update sshpass python-pip
-RUN yum clean all
+RUN yum install -q -y iptables-services git GeoIP-update python-pip && \
+    yum -q clean all
 
 WORKDIR /tmp
 RUN wget -q --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie" "http://download.oracle.com/otn-pub/java/jdk/8u73-b02/jdk-8u73-linux-x64.rpm" && \

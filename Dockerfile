@@ -39,10 +39,13 @@ COPY ./config/patterns /etc/logstash/patterns
 COPY ./config/GeoLiteCity.dat ./config/GeoLiteCountry.dat /etc/logstash/
 COPY ./config/conf.d /etc/logstash/conf.d
 
-RUN mkdir /root/certs
-RUN chmod 600 /etc/rsyncd.secrets
-RUN mkdir /var/log/supervisor
-RUN chown -R logstash: /etc/logstash /etc/supervisord.conf
+RUN mkdir /root/certs && \
+    chmod 600 /etc/rsyncd.secrets && \
+    mkdir /var/log/supervisor && \
+    chown -R logstash: /etc/logstash /etc/supervisord.conf
+
+RUN ./plugin update logstash-input-beats && \
+    ./plugin update logstash-output-elasticsearch
 
 ENV PATH /opt/logstash/bin:$PATH
  

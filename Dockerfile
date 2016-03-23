@@ -44,10 +44,7 @@ ENV PATH /opt/logstash/bin:$PATH
 RUN mkdir /root/certs && \
     chmod 600 /etc/rsyncd.secrets && \
     mkdir /var/log/supervisor && \
-    chown -R logstash: /etc/logstash /etc/supervisord.conf && \
-    cd /opt/logstash/bin/ && \
-    ./plugin update logstash-input-beats && \
-    ./plugin update logstash-output-elasticsearch
+    chown -R logstash: /etc/logstash /etc/supervisord.conf
 
 VOLUME /root /etc/logstash
 

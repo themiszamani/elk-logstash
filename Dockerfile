@@ -2,7 +2,7 @@
 FROM bbania/centos:base
 MAINTAINER "Bart Bania" <contact@bartbania.com>
 
-ENV LS_HEAP_SIZE=2g
+ENV LS_HEAP_SIZE=3g
 ENV LANG en_US.utf8
 
 RUN yum install -q -y iptables-services git GeoIP-update python-pip && \

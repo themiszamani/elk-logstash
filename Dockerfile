@@ -9,7 +9,7 @@ RUN yum install -q -y iptables-services git GeoIP-update python-pip
 
 WORKDIR /tmp
 RUN wget -q --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie" "http://download.oracle.com/otn-pub/java/jdk/8u73-b02/jdk-8u73-linux-x64.rpm" && \
-    wget -q https://download.elastic.co/logstash/logstash/packages/centos/logstash-2.2.1-1.noarch.rpm && \
+    wget -q https://download.elastic.co/logstash/logstash/packages/centos/logstash-2.3.0-1.noarch.rpm && \
     yum localinstall -q -y jdk-8u73-linux-x64.rpm && \
     yum localinstall -q -y logstash-2.2.1-1.noarch.rpm && \
     chkconfig logstash off && \

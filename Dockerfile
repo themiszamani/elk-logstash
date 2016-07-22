@@ -8,7 +8,7 @@ ENV LANG en_US.utf8
 RUN yum install -y iptables-services git GeoIP-update python-pip
 
 WORKDIR /tmp
-RUN wget -q --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie" -O jdk-8.rpm "http://download.oracle.com/otn-pub/java/jdk/8u91-b14/jdk-8u91-linux-x64.rpm" && \
+RUN wget -q --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie" -O jdk-8.rpm "http://download.oracle.com/otn-pub/java/jdk/8u102-b14/jdk-8u102-linux-x64.rpm" && \
     wget -q https://download.elastic.co/logstash/logstash/packages/centos/logstash-all-plugins-2.3.3-1.noarch.rpm -O logstash.rpm && \
     yum localinstall -y jdk-8.rpm && \
     yum localinstall -y logstash.rpm && \

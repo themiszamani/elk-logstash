@@ -8,11 +8,11 @@ ENV LANG en_US.utf8
 RUN yum install -y iptables-services git GeoIP-update python-pip
 
 WORKDIR /tmp
-RUN wget -q https://download.elastic.co/logstash/logstash/packages/centos/logstash-all-plugins-2.4.0.noarch.rpm -O logstash.rpm && \
+RUN wget https://download.elastic.co/logstash/logstash/packages/centos/logstash-all-plugins-2.4.0.noarch.rpm -O logstash.rpm && \
     yum localinstall -y logstash.rpm && \
     chkconfig logstash off && \
     rm -rf logstash* && \
-    yum -q clean all
+    yum clean all
 
 # Setup gosu for easier command execution
 RUN gpg --keyserver pool.sks-keyservers.net --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4 \
